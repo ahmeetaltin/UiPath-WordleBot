@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="API_Get5LetteredWords" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:a="clr-namespace:AngleSharp;assembly=AngleSharp" xmlns:ad="clr-namespace:AngleSharp.Dom;assembly=AngleSharp" xmlns:ahd="clr-namespace:AngleSharp.Html.Dom;assembly=AngleSharp" xmlns:ahp="clr-namespace:AngleSharp.Html.Parser;assembly=AngleSharp" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="API_Get5LetteredWords" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:a="clr-namespace:AngleSharp;assembly=AngleSharp" xmlns:ad="clr-namespace:AngleSharp.Dom;assembly=AngleSharp" xmlns:ahd="clr-namespace:AngleSharp.Html.Dom;assembly=AngleSharp" xmlns:ahp="clr-namespace:AngleSharp.Html.Parser;assembly=AngleSharp" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_str_BasHarf" Type="InArgument(x:String)" />
     <x:Property Name="io_int_HarfSayisi" Type="InOutArgument(x:Int32)" />
@@ -7,10 +7,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1655,1530</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1486,1594</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>API_Get5LetteredWords_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="39">
+    <scg:List x:TypeArguments="x:String" Capacity="78">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -50,42 +50,51 @@
       <x:String>AngleSharp.Html.Parser</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Xml.Serialization</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
     <scg:List x:TypeArguments="AssemblyReference" Capacity="42">
-      <AssemblyReference>System.Activities</AssemblyReference>
-      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
-      <AssemblyReference>mscorlib</AssemblyReference>
-      <AssemblyReference>System.Data</AssemblyReference>
-      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
-      <AssemblyReference>System</AssemblyReference>
-      <AssemblyReference>System.Drawing</AssemblyReference>
-      <AssemblyReference>System.Core</AssemblyReference>
-      <AssemblyReference>System.Xml</AssemblyReference>
-      <AssemblyReference>System.Xml.Linq</AssemblyReference>
-      <AssemblyReference>PresentationFramework</AssemblyReference>
-      <AssemblyReference>WindowsBase</AssemblyReference>
-      <AssemblyReference>PresentationCore</AssemblyReference>
-      <AssemblyReference>System.Xaml</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Web</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
-      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
       <AssemblyReference>AngleSharp</AssemblyReference>
       <AssemblyReference>AngleSharp.XPath</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
-      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="API Get 5 Lettered Words" sap:VirtualizedContainerService.HintSize="548,1465" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="API Get 5 Lettered Words" sap:VirtualizedContainerService.HintSize="638,1529" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="int_StatusCode" />
       <Variable x:TypeArguments="x:String" Name="str_HtmlBody" />
@@ -93,13 +102,14 @@
       <Variable x:TypeArguments="a:IBrowsingContext" Name="Context" />
       <Variable x:TypeArguments="ahp:IHtmlParser" Name="Parser" />
       <Variable x:TypeArguments="ahd:IHtmlDocument" Name="Document" />
+      <Variable x:TypeArguments="str:MatchCollection" Name="Kelimeler" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" BodyFormat="application/xml" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="[&quot;https://www.kelimetre.com/&quot;+in_str_BasHarf+&quot;-ile-baslayan-5-harfli-kelimeler&quot;]" sap:VirtualizedContainerService.HintSize="506,22" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="GET" Result="[str_HtmlBody]" StatusCode="[int_StatusCode]" TimeoutMS="6000">
+    <ui:HttpClient AcceptFormat="ANY" Body="{x:Null}" BodyFormat="application/xml" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="[&quot;https://www.kelimetre.com/&quot;+in_str_BasHarf+&quot;-ile-baslayan-5-harfli-kelimeler&quot;]" sap:VirtualizedContainerService.HintSize="590,25" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="GET" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" Result="[str_HtmlBody]" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="[int_StatusCode]" TimeoutMS="6000" Username="{x:Null}">
       <ui:HttpClient.Attachments>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.Attachments>
@@ -116,7 +126,7 @@
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.UrlSegments>
     </ui:HttpClient>
-    <Assign sap:VirtualizedContainerService.HintSize="506,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="590,81" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="a:IBrowsingContext">[Context]</OutArgument>
       </Assign.To>
@@ -124,7 +134,7 @@
         <InArgument x:TypeArguments="a:IBrowsingContext">[new AngleSharp.BrowsingContext]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="506,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap:VirtualizedContainerService.HintSize="590,81" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="ahp:IHtmlParser">[Parser]</OutArgument>
       </Assign.To>
@@ -132,7 +142,7 @@
         <InArgument x:TypeArguments="ahp:IHtmlParser">[Context.GetService(of IHtmlParser)]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="506,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap:VirtualizedContainerService.HintSize="590,81" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="ahd:IHtmlDocument">[Document]</OutArgument>
       </Assign.To>
@@ -140,7 +150,7 @@
         <InArgument x:TypeArguments="ahd:IHtmlDocument">[Parser.ParseDocument(str_HtmlBody)]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="506,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign sap:VirtualizedContainerService.HintSize="590,81" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="ad:IHtmlCollection(ad:IElement)">[Tablo]</OutArgument>
       </Assign.To>
@@ -148,31 +158,31 @@
         <InArgument x:TypeArguments="ad:IHtmlCollection(ad:IElement)">[Document.GetElementsByClassName("card")]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEach x:TypeArguments="ad:IElement" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Bütün tablonun içerisinde satır satır gezmeye yarar." DisplayName="For Each : Tablo" sap:VirtualizedContainerService.HintSize="506,911" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Tablo]">
+    <ui:ForEach x:TypeArguments="ad:IElement" sap2010:Annotation.AnnotationText="Bütün tablonun içerisinde satır satır gezmeye yarar." CurrentIndex="{x:Null}" DisplayName="For Each : Tablo" sap:VirtualizedContainerService.HintSize="590,923" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Tablo]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="ad:IElement">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ad:IElement" Name="DIV" />
           </ActivityAction.Argument>
-          <ui:ForEach x:TypeArguments="ad:IElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="470,756" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[DIV.Children]">
+          <ui:ForEach x:TypeArguments="ad:IElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="554,767" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[DIV.Children]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="ad:IElement">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="ad:IElement" Name="UL" />
                 </ActivityAction.Argument>
-                <ui:ForEach x:TypeArguments="ad:IElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="434,632" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[UL.Children]">
+                <ui:ForEach x:TypeArguments="ad:IElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="518,642" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[UL.Children]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="ad:IElement">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="ad:IElement" Name="item" />
                       </ActivityAction.Argument>
-                      <Sequence sap:VirtualizedContainerService.HintSize="376,508" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <Sequence sap:VirtualizedContainerService.HintSize="482,517" sap2010:WorkflowViewState.IdRef="Sequence_2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                        <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_5">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Int32">[io_int_HarfSayisi]</OutArgument>
                           </Assign.To>
@@ -180,8 +190,8 @@
                             <InArgument x:TypeArguments="x:Int32">[io_int_HarfSayisi+1]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[io_int_HarfSayisi.ToString+&quot; -&gt; &quot;+item.GetAttribute(&quot;href&quot;).Split(&quot;-&quot;c)(0)]" />
-                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{item.GetAttribute(&quot;href&quot;).Split(&quot;-&quot;c)(0)}]" DataTable="[io_dt_Kelimeler]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[io_int_HarfSayisi.ToString+&quot; -&gt; &quot;+item.GetAttribute(&quot;href&quot;).Split(&quot;-&quot;c)(0)]" />
+                        <ui:AddDataRow ArrayRow="[{item.GetAttribute(&quot;href&quot;).Split(&quot;-&quot;c)(0)}]" DataRow="{x:Null}" DataTable="[io_dt_Kelimeler]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="434,186" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                       </Sequence>
                     </ActivityAction>
                   </ui:ForEach.Body>
