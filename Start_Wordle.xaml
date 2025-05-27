@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1486,4060</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1867,4222</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Start_Wordle_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -76,9 +76,10 @@
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Start Wordle" sap:VirtualizedContainerService.HintSize="746,3995" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Start Wordle" sap:VirtualizedContainerService.HintSize="746,4157" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_workflowName" />
     </Sequence.Variables>
@@ -103,7 +104,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser : Wordle" sap:VirtualizedContainerService.HintSize="434,162" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="325fd5ee5a21507d756f82fb0435177a" Selector="&lt;html app='chrome.exe' title='Wordle Türkçe - Günlük Kelime Oyunu' /&gt;" TimeoutMS="500">
+        <ui:BrowserScope Browser="{x:Null}" BrowserType="Chrome" ContinueOnError="{x:Null}" DisplayName="Attach Browser : Wordle" sap:VirtualizedContainerService.HintSize="434,162" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="325fd5ee5a21507d756f82fb0435177a" SearchScope="{x:Null}" Selector="&lt;html app='chrome.exe' title='Wordle Türkçe - Günlük Kelime Oyunu' /&gt;" TimeoutMS="500" UiBrowser="{x:Null}">
           <ui:BrowserScope.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -125,7 +126,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="467,202" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://www.bundle.app/wordle-tr/">
+            <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" BrowserType="Chrome" CommunicationMethod="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Open Browser" Hidden="{x:Null}" sap:VirtualizedContainerService.HintSize="510,202" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" Url="https://www.bundle.app/wordle-tr/" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}">
               <ui:OpenBrowser.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
@@ -155,7 +156,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:UiElementExists DisplayName="Element Exists : Açıklama" Exists="[isExist_Aciklama]" sap:VirtualizedContainerService.HintSize="484,107" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+      <ui:UiElementExists ContinueOnError="{x:Null}" DisplayName="Element Exists : Açıklama" Exists="[isExist_Aciklama]" sap:VirtualizedContainerService.HintSize="484,107" sap2010:WorkflowViewState.IdRef="UiElementExists_2" Result="{x:Null}">
         <ui:UiElementExists.Target>
           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6c07471f-d39e-479f-b40e-3e51ed68fec8" InformativeScreenshot="2a72d5df3c2751d00170c6372af42360" Selector="&lt;html app='chrome.exe' title='Wordle Türkçe - Günlük Kelime Oyunu' /&gt;&lt;webctrl tag='GAME-APP' /&gt;&lt;webctrl shadowhostid='' tag='GAME-HELP' /&gt;&lt;webctrl parentid='game' shadowhostid='' tag='DIV' class='instructions' /&gt;" TimeoutMS="1000">
             <ui:Target.WaitForReady>
@@ -166,7 +167,7 @@
       </ui:UiElementExists>
       <If Condition="[isExist_Aciklama]" DisplayName="If : Açıklama" sap:VirtualizedContainerService.HintSize="484,296" sap2010:WorkflowViewState.IdRef="If_5">
         <If.Then>
-          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click : X" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+          <ui:Click AlterIfDisabled="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Click : X" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="{x:Null}" SimulateClick="True">
             <ui:Click.CursorPosition>
               <ui:CursorPosition Position="Center">
                 <ui:CursorPosition.OffsetX>
@@ -201,7 +202,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:UiElementExists DisplayName="Element Exists : Açıklama" Exists="[isExist_Aciklama]" sap:VirtualizedContainerService.HintSize="484,107" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+      <ui:UiElementExists ContinueOnError="{x:Null}" DisplayName="Element Exists : Açıklama" Exists="[isExist_Aciklama]" sap:VirtualizedContainerService.HintSize="484,107" sap2010:WorkflowViewState.IdRef="UiElementExists_3" Result="{x:Null}">
         <ui:UiElementExists.Target>
           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6c07471f-d39e-479f-b40e-3e51ed68fec8" InformativeScreenshot="97003d01c0c421c1a64dbf3a9252c90d" Selector="&lt;html app='chrome.exe' title='Wordle Türkçe - Günlük Kelime Oyunu' /&gt;&lt;webctrl id='first-visit-banner' tag='DIV' /&gt;" TimeoutMS="1000">
             <ui:Target.WaitForReady>
@@ -212,7 +213,7 @@
       </ui:UiElementExists>
       <If Condition="[isExist_Aciklama]" DisplayName="If : Açıklama" sap:VirtualizedContainerService.HintSize="484,296" sap2010:WorkflowViewState.IdRef="If_6">
         <If.Then>
-          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click : X" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+          <ui:Click AlterIfDisabled="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Click : X" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="{x:Null}" SimulateClick="True">
             <ui:Click.CursorPosition>
               <ui:CursorPosition Position="Center">
                 <ui:CursorPosition.OffsetX>
@@ -237,13 +238,13 @@
         </If.Then>
       </If>
     </Sequence>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser : Wordle" sap:VirtualizedContainerService.HintSize="698,3249" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="325fd5ee5a21507d756f82fb0435177a" Selector="&lt;html app='chrome.exe' title='Wordle Türkçe - Günlük Kelime Oyunu' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" BrowserType="Chrome" ContinueOnError="{x:Null}" DisplayName="Attach Browser : Wordle" sap:VirtualizedContainerService.HintSize="698,3411" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="325fd5ee5a21507d756f82fb0435177a" SearchScope="{x:Null}" Selector="&lt;html app='chrome.exe' title='Wordle Türkçe - Günlük Kelime Oyunu' /&gt;" TimeoutMS="{x:Null}" UiBrowser="{x:Null}">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do Browser : Wordle" sap:VirtualizedContainerService.HintSize="664,3102" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do Browser : Wordle" sap:VirtualizedContainerService.HintSize="664,3264" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="UI_Children" />
               <Variable x:TypeArguments="x:Int32" Name="int_Random" />
@@ -254,7 +255,7 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" sap:VirtualizedContainerService.HintSize="616,69" sap2010:WorkflowViewState.IdRef="Activate_1">
+            <ui:Activate ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" sap:VirtualizedContainerService.HintSize="616,69" sap2010:WorkflowViewState.IdRef="Activate_1">
               <ui:Activate.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="7735bdce-c5cf-4cf3-b656-82b6b6759d5e">
                   <ui:Target.TimeoutMS>
@@ -266,13 +267,13 @@
                 </ui:Target>
               </ui:Activate.Target>
             </ui:Activate>
-            <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="616,2907" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Enumerable.Range(1,6)]">
+            <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="616,3069" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Enumerable.Range(1,6)]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:Int32">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Int32" Name="i" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body : For Each 6 Times" sap:VirtualizedContainerService.HintSize="580,2783" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Body : For Each 6 Times" sap:VirtualizedContainerService.HintSize="580,2945" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="str_YazilacakWordle" />
                       <Variable x:TypeArguments="x:Int32" Name="int_IndexOfWordle" />
@@ -283,22 +284,78 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="532,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[str_workflowName+&quot;'&quot;+in_dt_Kelimeler.RowCount.ToString+&quot;' kelime tanıma uygun.&quot;]" />
-                    <Assign sap:VirtualizedContainerService.HintSize="532,81" sap2010:WorkflowViewState.IdRef="Assign_1">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:Int32">[int_Random]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:Int32">[new Random().Next(0,in_dt_Kelimeler.RowCount)]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <Assign sap:VirtualizedContainerService.HintSize="532,81" sap2010:WorkflowViewState.IdRef="Assign_7">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[str_YazilacakWordle]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[in_dt_Kelimeler.Rows(int_Random).Item(0).ToString]</InArgument>
-                      </Assign.Value>
-                    </Assign>
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="532,25" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="530,387" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Sequence DisplayName="Sequence : Random" sap:VirtualizedContainerService.HintSize="482,293" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Int32">[int_Random]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Int32">[new Random().Next(0,in_dt_Kelimeler.RowCount)]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[str_YazilacakWordle]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[in_dt_Kelimeler.Rows(int_Random).Item("Words").ToString]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:CommentOut>
+                    <Sequence DisplayName="Sequence : Best Word" sap:VirtualizedContainerService.HintSize="532,299" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="scg:List(sd:DataRow)" Name="List_bestWords" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="434,85" sap2010:WorkflowViewState.IdRef="Assign_9">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="scg:List(sd:DataRow)">[List_bestWords]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="scg:List(sd:DataRow)" xml:space="preserve">[in_dt_Kelimeler.AsEnumerable().
+             OrderByDescending(Function(r) CInt(r("Score"))).ToList()]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="434,85" sap2010:WorkflowViewState.IdRef="Assign_8">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[str_YazilacakWordle]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String" xml:space="preserve">[in_dt_Kelimeler.AsEnumerable().
+    Where(Function(r) Not IsDBNull(r("Score"))).
+    OrderByDescending(Function(r) Convert.ToInt32(r("Score"))).
+    Take(5).
+    OrderBy(Function(r) Guid.NewGuid()).
+    First()("Words").ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
                     <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each : Write Wordle" sap:VirtualizedContainerService.HintSize="532,438" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Enumerable.Range(0,str_YazilacakWordle.Length)]">
                       <ui:ForEach.Body>
                         <ActivityAction x:TypeArguments="x:Int32">
@@ -322,7 +379,7 @@
                                 <InArgument x:TypeArguments="x:String">[str_YazilacakWordle(i)]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="0" DelayMS="0" DisplayName="Click : Harf" sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                            <ui:Click AlterIfDisabled="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="0" DelayMS="0" DisplayName="Click : Harf" sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="{x:Null}" SimulateClick="True">
                               <ui:Click.CursorPosition>
                                 <ui:CursorPosition Position="Center">
                                   <ui:CursorPosition.OffsetX>
@@ -348,7 +405,7 @@
                         </ActivityAction>
                       </ui:ForEach.Body>
                     </ui:ForEach>
-                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey : Enter" sap:VirtualizedContainerService.HintSize="532,115" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
+                    <ui:SendHotkey Activate="True" ClickBeforeTyping="{x:Null}" ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" DisplayName="Send Hotkey : Enter" EmptyField="{x:Null}" sap:VirtualizedContainerService.HintSize="532,115" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SendWindowMessages="{x:Null}" SpecialKey="True">
                       <ui:SendHotkey.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="64adbf69-25a1-4b09-91ca-c1d310db84ee">
                           <ui:Target.TimeoutMS>
@@ -372,7 +429,7 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:UiElementExists DisplayName="Element Exists : Sonuç" Exists="[isExist_SonucEkrani]" sap:VirtualizedContainerService.HintSize="484,107" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                      <ui:UiElementExists ContinueOnError="{x:Null}" DisplayName="Element Exists : Sonuç" Exists="[isExist_SonucEkrani]" sap:VirtualizedContainerService.HintSize="484,107" sap2010:WorkflowViewState.IdRef="UiElementExists_1" Result="{x:Null}">
                         <ui:UiElementExists.Target>
                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9cf73e38-1e9b-4d8f-8749-470218d048a4" InformativeScreenshot="ca9427eb8ed85bbe654a0c4e27481d5d" Selector="&lt;webctrl tag='GAME-APP' /&gt;&lt;webctrl shadowhostid='' tag='GAME-STATS' /&gt;" TimeoutMS="1200">
                             <ui:Target.WaitForReady>
@@ -404,7 +461,7 @@
                         </If.Else>
                       </If>
                     </Sequence>
-                    <ui:FindChildren Children="[UI_Children]" DisplayName="Find Children : Row" Filter="&lt;webctrl shadowhostid='' tag='GAME-TILE' /&gt;" sap:VirtualizedContainerService.HintSize="532,107" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_DESCENDANTS">
+                    <ui:FindChildren Children="[UI_Children]" ContinueOnError="{x:Null}" DisplayName="Find Children : Row" Filter="&lt;webctrl shadowhostid='' tag='GAME-TILE' /&gt;" sap:VirtualizedContainerService.HintSize="532,107" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_DESCENDANTS">
                       <ui:FindChildren.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="14f8170a-7f09-4406-9c86-20b448bcc584" InformativeScreenshot="d205a4af8e01f65872f06dc6be5b35fc" Selector="[String.Format(&quot;&lt;webctrl tag='GAME-APP' /&gt;&lt;webctrl idx='{0}' shadowhostid='' tag='GAME-ROW' /&gt;&quot;, i)]">
                           <ui:Target.TimeoutMS>
@@ -431,7 +488,7 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:GetAttribute ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Gray -&gt; absent&#xA;Yellow -&gt; preset&#xA;Green -&gt; correct" Attribute="evaluation" DisplayName="Get Attribute : of Letters" sap:VirtualizedContainerService.HintSize="368,222" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
+                            <ui:GetAttribute sap2010:Annotation.AnnotationText="Gray -&gt; absent&#xA;Yellow -&gt; preset&#xA;Green -&gt; correct" Attribute="evaluation" ContinueOnError="{x:Null}" DisplayName="Get Attribute : of Letters" sap:VirtualizedContainerService.HintSize="368,222" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
                               <ui:GetAttribute.Result>
                                 <OutArgument x:TypeArguments="x:String">[str_CurrentDataState]</OutArgument>
                               </ui:GetAttribute.Result>
@@ -460,7 +517,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <If.Then>
-                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Harf_Yok workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="_Harf_Yok.xaml">
+                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Harf_Yok workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" Level="{x:Null}" LogEntry="{x:Null}" LogExit="{x:Null}" Timeout="{x:Null}" UnSafe="False" WorkflowFileName="_Harf_Yok.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
                                     <InArgument x:TypeArguments="x:String" x:Key="in_str_OlmayanHarf">[str_YazilacakWordle(int_IndexOfWordle)]</InArgument>
                                     <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_Kelimeler">[in_dt_Kelimeler]</InOutArgument>
@@ -486,7 +543,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <If.Then>
-                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke _Harf_Farkli_Yerde workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="_Harf_Farkli_Yerde.xaml">
+                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke _Harf_Farkli_Yerde workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" Level="{x:Null}" LogEntry="{x:Null}" LogExit="{x:Null}" Timeout="{x:Null}" UnSafe="False" WorkflowFileName="_Harf_Farkli_Yerde.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
                                     <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_Kelimeler">[in_dt_Kelimeler]</InOutArgument>
                                     <InArgument x:TypeArguments="x:String" x:Key="in_str_Harf">[str_YazilacakWordle(int_IndexOfWordle)]</InArgument>
@@ -513,7 +570,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <If.Then>
-                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke _Harf_Dogru_Yerde workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="_Harf_Dogru_Yerde.xaml">
+                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke _Harf_Dogru_Yerde workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" Level="{x:Null}" LogEntry="{x:Null}" LogExit="{x:Null}" Timeout="{x:Null}" UnSafe="False" WorkflowFileName="_Harf_Dogru_Yerde.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
                                     <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_Kelimeler">[in_dt_Kelimeler]</InOutArgument>
                                     <InArgument x:TypeArguments="x:Int32" x:Key="in_int_OlduguYer">[int_IndexOfWordle]</InArgument>
